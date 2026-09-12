@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ledger palette — deep ink, ivory paper, muted profit-green, restrained gold */
+  --color-ink: #0E1B2B;
+  --color-ink-2: #16273B;
+  --color-paper: #FAF8F3;
+  --color-paper-2: #F1EDE3;
+  --color-hairline: #DCD5C4;
+  --color-hairline-dark: #2A3B52;
+  --color-emerald: #1F7A5C;
+  --color-emerald-light: #2F9973;
+  --color-gold: #C9A227;
+  --color-rose: #A6432B;
+  --color-slate: #5B6673;
+  --color-slate-light: #8B94A0;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Ledger hairline rule, used to encode structure not decoration */
+.rule {
+  border-top: 1px solid var(--color-hairline);
+}
+.rule-dark {
+  border-top: 1px solid var(--color-hairline-dark);
+}
+
+/* Ticker marquee */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker-scroll 38s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}

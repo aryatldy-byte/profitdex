@@ -1,0 +1,149 @@
+import { Link } from 'react-router-dom'
+import { useAccountModal } from '../context/AccountModalContext'
+
+const SERVICES = [
+  {
+    name: 'Mutual Fund Advisory',
+    desc: 'Curated equity, debt, and hybrid scheme portfolios matched to your time horizon and risk appetite, reviewed every quarter.',
+  },
+  {
+    name: 'Active Trading Desk',
+    desc: 'Discretionary and rules-based trading across cash and derivatives, run by a desk that publishes its reasoning, not just its calls.',
+  },
+  {
+    name: 'Portfolio Health Reviews',
+    desc: 'A plain-language breakdown of what you hold, why it is there, and what — if anything — needs to change.',
+  },
+]
+
+const LEDGER_STATS = [
+  { label: 'Assets advised', value: '' },
+  { label: 'Client accounts', value: '' },
+  { label: 'Years operating', value: '' },
+  { label: 'Research notes / yr', value: '' },
+]
+
+export default function Home() {
+  const { openModal } = useAccountModal()
+  return (
+    <div>
+      {/* Hero */}
+      <section className="bg-ink text-paper">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24 grid md:grid-cols-[1.2fr_1fr] gap-12 items-center">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-5">
+              Profitdex Ventures — Est. 2015
+            </p>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-[3.4rem] leading-[1.08] mb-6">
+              Capital, managed like a ledger —
+              <span className="text-gold"> every entry accounted for.</span>
+            </h1>
+            <p className="text-paper/75 text-base sm:text-lg max-w-xl leading-relaxed mb-8">
+              We run mutual fund portfolios and active trading strategies for individuals
+              and institutions who want a clear record of decisions, not just returns.
+              Daily market updates, transparent fees, no jargon.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button
+                onClick={openModal}
+                className="rounded-sm bg-gold px-6 py-3 text-sm font-medium text-ink hover:bg-gold/90 transition-colors"
+              >
+                Open an account
+              </button>
+              <Link
+                to="/about"
+                className="rounded-sm border border-paper/30 px-6 py-3 text-sm text-paper hover:border-gold hover:text-gold transition-colors"
+              >
+                Our services
+              </Link>
+            </div>
+          </div>
+
+          {/* Ledger card — signature element */}
+          <div className="bg-ink-2 border border-hairline-dark rounded-sm p-6 font-mono text-sm">
+            <div className="flex items-center justify-between pb-3 mb-3 rule-dark">
+              <span className="text-paper/60 uppercase text-xs tracking-wide">Daily Ledger</span>
+              <span className="text-paper/40 text-xs">19 Aug 2026</span>
+            </div>
+            {[
+              ['NIFTY 50', '24,812.35', '+0.42%', true],
+              ['Client portfolios in green', '78%', '', true],
+              ['Fund inflows, today', '₹4.2 Cr', '', true],
+              ['Active trades, desk', '31 open', '', null],
+              ['Research notes published', '3', '', null],
+            ].map(([label, value, change, up], i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between py-2.5 border-b border-hairline-dark/60 last:border-0"
+              >
+                <span className="text-paper/70">{label}</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-paper">{value}</span>
+                  {change && (
+                    <span className={up ? 'text-emerald-light' : 'text-rose'}>{change}</span>
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats strip */}
+      <section className="rule">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+          {LEDGER_STATS.map((s) => (
+            <div key={s.label}>
+              <p className="font-display text-2xl sm:text-3xl text-ink">{s.value}</p>
+              <p className="text-xs uppercase tracking-wide text-slate mt-1">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+        <div className="max-w-2xl mb-10">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald mb-3">What we do</p>
+          <h2 className="font-display text-3xl sm:text-4xl text-ink mb-3">
+            Two disciplines, one standard of record-keeping.
+          </h2>
+          <p className="text-slate leading-relaxed">
+            Whether your capital sits in a long-term fund or an active trading strategy,
+            you get the same thing: a clear account of what was done, and why.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {SERVICES.map((s, i) => (
+            <div key={s.name} className="bg-white/60 border border-hairline rounded-sm p-6">
+              <p className="font-mono text-xs text-gold mb-3">{String(i + 1).padStart(2, '0')}</p>
+              <h3 className="font-display text-lg text-ink mb-2">{s.name}</h3>
+              <p className="text-sm text-slate leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-ink-2">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div>
+            <h2 className="font-display text-2xl sm:text-3xl text-paper mb-2">
+              Ready to get started?
+            </h2>
+            <p className="text-paper/70 text-sm max-w-md">
+              Share your details and our desk will reach out to set up your account.
+            </p>
+          </div>
+          <button
+            onClick={openModal}
+            className="shrink-0 rounded-sm bg-gold px-6 py-3 text-sm font-medium text-ink hover:bg-gold/90 transition-colors"
+          >
+            Open an account
+          </button>
+        </div>
+      </section>
+    </div>
+  )
+}

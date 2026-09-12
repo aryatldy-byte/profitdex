@@ -1,0 +1,56 @@
+[
+  {
+    "id": "n-1006",
+    "date": "2026-08-19",
+    "headline": "Fed signals steady rates as inflation cools to 2.4%",
+    "category": "Macro",
+    "body": "The Federal Reserve held its benchmark rate unchanged, citing continued disinflation and a resilient labor market. Fund managers broadly read the tone as a green light for risk assets into year-end, though a handful flagged stretched valuations in large-cap growth names.",
+    "author": "Profitdex Research Desk",
+    "tag": "high"
+  },
+  {
+    "id": "n-1005",
+    "date": "2026-08-18",
+    "headline": "Nifty 50 closes flat as IT stocks offset banking gains",
+    "category": "Equities",
+    "body": "Domestic benchmark indices ended a choppy session little changed. Private banks advanced on strong deposit growth, while IT majors slipped after a cautious outlook from a global peer. Our equity desk maintains a neutral stance on the sector pending Q2 earnings.",
+    "author": "Profitdex Research Desk",
+    "tag": "normal"
+  },
+  {
+    "id": "n-1004",
+    "date": "2026-08-17",
+    "headline": "Gold holds above key support as investors weigh rate path",
+    "category": "Commodities",
+    "body": "Bullion consolidated near recent highs as traders balanced a firmer dollar against ongoing central bank accumulation. We continue to favor a modest strategic allocation to gold within diversified mandates as a hedge against policy surprises.",
+    "author": "Profitdex Research Desk",
+    "tag": "normal"
+  },
+  {
+    "id": "n-1003",
+    "date": "2026-08-14",
+    "headline": "Small-cap mutual funds see fourth straight month of inflows",
+    "category": "Mutual Funds",
+    "body": "Retail participation in small-cap schemes continued to build, with net inflows extending a four-month streak. While the segment offers attractive long-term compounding, we remind clients that small-cap allocations should stay within their planned risk budget.",
+    "author": "Profitdex Research Desk",
+    "tag": "normal"
+  },
+  {
+    "id": "n-1002",
+    "date": "2026-08-12",
+    "headline": "Crude oil slips on higher-than-expected inventory build",
+    "category": "Commodities",
+    "body": "Oil prices fell after weekly data showed a larger stockpile increase than analysts anticipated. Energy-linked equities traded lower in sympathy, though refiners were comparatively resilient on improved crack spreads.",
+    "author": "Profitdex Research Desk",
+    "tag": "low"
+  },
+  {
+    "id": "n-1001",
+    "date": "2026-08-10",
+    "headline": "Quarterly review: balanced advantage funds outperform pure equity peers",
+    "category": "Mutual Funds",
+    "body": "Our latest review of dynamic asset allocation schemes shows a smoother return path versus pure equity funds over the trailing quarter, with roughly two-thirds of the drawdown. Clients focused on capital preservation may find this category worth a closer look.",
+    "author": "Profitdex Research Desk",
+    "tag": "normal"
+  }
+]
