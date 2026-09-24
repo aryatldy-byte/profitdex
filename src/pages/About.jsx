@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+import { Link } from 'react-router-dom'
+import ProductsGrid from '../components/ProductsGrid'
+import OwnerProfile from '../components/OwnerProfile'
+
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
 const PRINCIPLES = [
   {
     title: 'Research first',
@@ -59,6 +66,7 @@ export default function About() {
         </div>
       </section>
 
+<<<<<<< HEAD
       <section className="bg-paper-2 rule">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
           <h2 className="font-display text-2xl text-ink mb-8">How we operate</h2>
@@ -71,6 +79,82 @@ export default function About() {
               </div>
             ))}
           </div>
+=======
+      {/* Commodity risk-management highlight */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 pb-14">
+        <div className="bg-gold/10 border border-gold/40 rounded-sm p-6 sm:p-10">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-3">Specialised solution</p>
+          <h2 className="font-display text-2xl sm:text-3xl text-ink mb-4 max-w-2xl">
+            Commodity risk-management for jewellers, bullion dealers &amp; manufacturers
+          </h2>
+          <p className="text-slate leading-relaxed max-w-3xl mb-6">
+            Gold and silver price swings can move margins overnight for businesses that hold
+            physical stock. We design hedging strategies on commodity derivatives — futures and
+            options on gold and silver — so jewellers, bullion dealers and manufacturers can lock
+            in costs, protect inventory value, and plan pricing with confidence instead of
+            reacting to every price move.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-5">
+            <div className="bg-white/70 border border-hairline rounded-sm p-4">
+              <h3 className="font-display text-base text-ink mb-1.5">Inventory hedging</h3>
+              <p className="text-sm text-slate leading-relaxed">
+                Offset the price risk on physical gold and silver stock held for sale or crafting.
+              </p>
+            </div>
+            <div className="bg-white/70 border border-hairline rounded-sm p-4">
+              <h3 className="font-display text-base text-ink mb-1.5">Forward pricing</h3>
+              <p className="text-sm text-slate leading-relaxed">
+                Lock in input costs ahead of large orders or seasonal manufacturing cycles.
+              </p>
+            </div>
+            <div className="bg-white/70 border border-hairline rounded-sm p-4">
+              <h3 className="font-display text-base text-ink mb-1.5">Advisory &amp; execution</h3>
+              <p className="text-sm text-slate leading-relaxed">
+                Our desk designs the hedge structure and executes it, with plain-language
+                reporting on positions and cover ratios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products */}
+      <section className="bg-paper-2 rule">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald mb-3">Our products</p>
+              <h2 className="font-display text-2xl sm:text-3xl text-ink">A full desk of investing and trading products.</h2>
+            </div>
+            <Link to="/products" className="text-sm text-emerald hover:underline whitespace-nowrap">
+              View all products →
+            </Link>
+          </div>
+          <ProductsGrid compact />
+        </div>
+      </section>
+
+      {/* How we operate */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+        <h2 className="font-display text-2xl text-ink mb-8">How we operate</h2>
+        <div className="grid sm:grid-cols-3 gap-6">
+          {PRINCIPLES.map((p, i) => (
+            <div key={p.title} className="bg-white/70 border border-hairline rounded-sm p-6">
+              <p className="font-mono text-xs text-gold mb-3">{String(i + 1).padStart(2, '0')}</p>
+              <h3 className="font-display text-lg text-ink mb-2">{p.title}</h3>
+              <p className="text-sm text-slate leading-relaxed">{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Owner profile */}
+      <section className="bg-paper-2 rule">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald mb-3">Leadership</p>
+          <h2 className="font-display text-2xl sm:text-3xl text-ink mb-8">Meet our founder</h2>
+          <OwnerProfile />
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
         </div>
       </section>
 
@@ -80,8 +164,13 @@ export default function About() {
           Profitdex Ventures provides mutual fund distribution and advisory services
           along with trading facilitation. Mutual fund investments are subject to
           market risk; please read all scheme-related documents carefully before
+<<<<<<< HEAD
           investing. Trading in derivatives carries a high level of risk and may not
           be suitable for every investor.
+=======
+          investing. Trading in derivatives and commodity hedging carries a high level
+          of risk and may not be suitable for every investor.
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
         </p>
       </section>
     </div>

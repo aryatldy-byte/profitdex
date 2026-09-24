@@ -1,11 +1,20 @@
 import { useState } from 'react'
+<<<<<<< HEAD
+=======
+import { submitContactMessage } from '../data/contactService'
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
 
 const INITIAL = { name: '', email: '', message: '' }
 
 export default function Contact() {
   const [form, setForm] = useState(INITIAL)
   const [errors, setErrors] = useState({})
+<<<<<<< HEAD
   const [status, setStatus] = useState('idle') // idle | submitting | sent
+=======
+  const [status, setStatus] = useState('idle') // idle | submitting | sent | error
+  const [errorMsg, setErrorMsg] = useState('')
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -29,11 +38,23 @@ export default function Contact() {
     e.preventDefault()
     if (!validate()) return
     setStatus('submitting')
+<<<<<<< HEAD
     // TODO (Supabase): insert into a `contact_messages` table, or
     // forward to an email service / edge function.
     await new Promise((resolve) => setTimeout(resolve, 600))
     setStatus('sent')
     setForm(INITIAL)
+=======
+    setErrorMsg('')
+    try {
+      await submitContactMessage(form)
+      setStatus('sent')
+      setForm(INITIAL)
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err.message || 'Something went wrong. Please try again.')
+    }
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
   }
 
   return (
@@ -87,6 +108,14 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="space-y-5">
+<<<<<<< HEAD
+=======
+              {status === 'error' && (
+                <p className="text-sm text-rose bg-rose/10 border border-rose/30 rounded-sm px-3 py-2">
+                  {errorMsg}
+                </p>
+              )}
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
               <div>
                 <label htmlFor="name" className="block text-sm text-ink mb-1.5">
                   Name

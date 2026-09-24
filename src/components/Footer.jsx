@@ -14,8 +14,14 @@ export default function Footer() {
             <span className="font-display text-base text-paper">Profitdex Ventures</span>
           </div>
           <p className="text-sm max-w-sm leading-relaxed">
+<<<<<<< HEAD
             Mutual fund management and trading services built on disciplined research,
             transparent reporting, and a long-term view of client capital.
+=======
+            Mutual fund management, trading services, and commodity risk-management
+            solutions for jewellers, bullion dealers and manufacturers — built on
+            disciplined research and transparent reporting.
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
           </p>
         </div>
 
@@ -23,6 +29,10 @@ export default function Footer() {
           <h3 className="font-display text-sm text-paper mb-3">Company</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/about" className="hover:text-gold">About us</Link></li>
+<<<<<<< HEAD
+=======
+            <li><Link to="/products" className="hover:text-gold">Products</Link></li>
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
             <li><Link to="/faq" className="hover:text-gold">FAQ</Link></li>
             <li><Link to="/contact" className="hover:text-gold">Contact</Link></li>
             <li>

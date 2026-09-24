@@ -5,6 +5,10 @@ import ProtectedRoute from './components/ProtectedRoute'
 
 import Home from './pages/Home'
 import About from './pages/About'
+<<<<<<< HEAD
+=======
+import Products from './pages/Products'
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
 import Contact from './pages/Contact'
 import FAQ from './pages/FAQ'
 
@@ -21,6 +25,10 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+<<<<<<< HEAD
+=======
+            <Route path="/products" element={<Products />} />
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
 

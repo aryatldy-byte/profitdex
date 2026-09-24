@@ -1,5 +1,6 @@
 // src/context/AuthContext.jsx
 //
+<<<<<<< HEAD
 // PLACEHOLDER authentication for the admin area. Credentials are
 // checked against a hard-coded account below purely so the admin
 // dashboard has something to log into during development — this is
@@ -22,12 +23,35 @@ const STORAGE_KEY = 'profitdex_session_v1'
 const DEMO_ACCOUNTS = [
   { email: 'admin@profitdexventures.com', password: 'admin123', role: 'admin', name: 'Profitdex Admin' },
 ]
+=======
+// Admin authentication backed by real Supabase Auth. Create the admin
+// user under Supabase Dashboard > Authentication > Users — there are
+// no hard-coded credentials here. Every signed-in Supabase user is
+// treated as an admin; add a `profiles` table with a `role` column
+// later if you need more than one access level.
+
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { supabase } from '../lib/supabaseClient'
+
+const AuthContext = createContext(null)
+
+function mapSupabaseUser(user) {
+  if (!user) return null
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.user_metadata?.name || user.email,
+    role: 'admin',
+  }
+}
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+<<<<<<< HEAD
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY)
       if (raw) setUser(JSON.parse(raw))
@@ -48,13 +72,47 @@ export function AuthProvider({ children }) {
     }
     const session = { email: account.email, role: account.role, name: account.name }
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session))
+=======
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(mapSupabaseUser(data.session?.user))
+      setLoading(false)
+    })
+
+    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(mapSupabaseUser(session?.user))
+    })
+
+    return () => subscription.subscription.unsubscribe()
+  }, [])
+
+  const login = async (email, password) => {
+    if (!supabase) {
+      throw new Error('Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.')
+    }
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email.trim(),
+      password,
+    })
+    if (error) throw new Error(error.message)
+    const session = mapSupabaseUser(data.user)
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
     setUser(session)
     return session
   }
 
+<<<<<<< HEAD
   const logout = () => {
     // TODO (Supabase): await supabase.auth.signOut()
     window.localStorage.removeItem(STORAGE_KEY)
+=======
+  const logout = async () => {
+    if (supabase) await supabase.auth.signOut()
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
     setUser(null)
   }
 

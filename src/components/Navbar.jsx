@@ -6,6 +6,10 @@ import { useAccountModal } from '../context/AccountModalContext'
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
+<<<<<<< HEAD
+=======
+  { to: '/products', label: 'Products' },
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -70,7 +74,11 @@ export default function Navbar() {
                 onClick={openModal}
                 className="rounded-sm bg-gold px-4 py-1.5 text-sm font-medium text-ink hover:bg-gold/90 transition-colors"
               >
+<<<<<<< HEAD
                 Open an account
+=======
+                Get started
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
               </button>
             )}
           </div>
@@ -136,7 +144,11 @@ export default function Navbar() {
                 }}
                 className="py-3 text-left text-sm text-gold"
               >
+<<<<<<< HEAD
                 Open an account
+=======
+                Get started
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
               </button>
             )}
           </nav>

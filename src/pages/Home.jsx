@@ -11,6 +11,7 @@ const SERVICES = [
     desc: 'Discretionary and rules-based trading across cash and derivatives, run by a desk that publishes its reasoning, not just its calls.',
   },
   {
+<<<<<<< HEAD
     name: 'Portfolio Health Reviews',
     desc: 'A plain-language breakdown of what you hold, why it is there, and what — if anything — needs to change.',
   },
@@ -21,6 +22,17 @@ const LEDGER_STATS = [
   { label: 'Client accounts', value: '' },
   { label: 'Years operating', value: '' },
   { label: 'Research notes / yr', value: '' },
+=======
+    name: 'Commodity Risk Management',
+    desc: 'Hedging solutions on gold and silver derivatives for jewellers, bullion dealers, and manufacturers exposed to price swings.',
+  },
+]
+
+const GET_STARTED_STEPS = [
+  { step: '01', title: 'Choose what you need', body: 'Trading & demat, SIP / mutual funds, insurance, or commodity hedging.' },
+  { step: '02', title: 'Share your details', body: 'A short form — name, contact number, and (for some products) your PAN.' },
+  { step: '03', title: 'Our desk reaches out', body: 'We confirm your requirement over a call or WhatsApp and take it from there.' },
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
 ]
 
 export default function Home() {
@@ -32,22 +44,33 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24 grid md:grid-cols-[1.2fr_1fr] gap-12 items-center">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-5">
+<<<<<<< HEAD
               Profitdex Ventures — Est. 2015
+=======
+              Profitdex Ventures
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
             </p>
             <h1 className="font-display text-4xl sm:text-5xl md:text-[3.4rem] leading-[1.08] mb-6">
               Capital, managed like a ledger —
               <span className="text-gold"> every entry accounted for.</span>
             </h1>
             <p className="text-paper/75 text-base sm:text-lg max-w-xl leading-relaxed mb-8">
+<<<<<<< HEAD
               We run mutual fund portfolios and active trading strategies for individuals
               and institutions who want a clear record of decisions, not just returns.
               Daily market updates, transparent fees, no jargon.
+=======
+              We run mutual fund portfolios, active trading strategies, and commodity
+              risk-management solutions for individuals, jewellers, bullion dealers and
+              institutions who want a clear record of decisions, not just returns.
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
             </p>
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={openModal}
                 className="rounded-sm bg-gold px-6 py-3 text-sm font-medium text-ink hover:bg-gold/90 transition-colors"
               >
+<<<<<<< HEAD
                 Open an account
               </button>
               <Link
@@ -55,10 +78,20 @@ export default function Home() {
                 className="rounded-sm border border-paper/30 px-6 py-3 text-sm text-paper hover:border-gold hover:text-gold transition-colors"
               >
                 Our services
+=======
+                Get Started / Open Account
+              </button>
+              <Link
+                to="/products"
+                className="rounded-sm border border-paper/30 px-6 py-3 text-sm text-paper hover:border-gold hover:text-gold transition-colors"
+              >
+                View products
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
               </Link>
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Ledger card — signature element */}
           <div className="bg-ink-2 border border-hairline-dark rounded-sm p-6 font-mono text-sm">
             <div className="flex items-center justify-between pb-3 mb-3 rule-dark">
@@ -85,10 +118,29 @@ export default function Home() {
                 </span>
               </div>
             ))}
+=======
+          {/* How to get started card — signature ledger element */}
+          <div className="bg-ink-2 border border-hairline-dark rounded-sm p-6">
+            <div className="flex items-center justify-between pb-3 mb-4 rule-dark">
+              <span className="text-paper/60 uppercase text-xs tracking-wide font-mono">Get started in 3 steps</span>
+            </div>
+            <div className="space-y-5">
+              {GET_STARTED_STEPS.map((s) => (
+                <div key={s.step} className="flex gap-4">
+                  <span className="font-mono text-xs text-gold shrink-0 pt-0.5">{s.step}</span>
+                  <div>
+                    <p className="text-paper text-sm font-medium mb-0.5">{s.title}</p>
+                    <p className="text-paper/60 text-xs leading-relaxed">{s.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
           </div>
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Stats strip */}
       <section className="rule">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -101,16 +153,27 @@ export default function Home() {
         </div>
       </section>
 
+=======
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
       {/* Services */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <div className="max-w-2xl mb-10">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald mb-3">What we do</p>
           <h2 className="font-display text-3xl sm:text-4xl text-ink mb-3">
+<<<<<<< HEAD
             Two disciplines, one standard of record-keeping.
           </h2>
           <p className="text-slate leading-relaxed">
             Whether your capital sits in a long-term fund or an active trading strategy,
             you get the same thing: a clear account of what was done, and why.
+=======
+            Three disciplines, one standard of record-keeping.
+          </h2>
+          <p className="text-slate leading-relaxed">
+            Whether your capital sits in a long-term fund, an active trading strategy, or a
+            hedge against commodity price risk, you get the same thing: a clear account of what
+            was done, and why.
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
           </p>
         </div>
 
@@ -140,7 +203,11 @@ export default function Home() {
             onClick={openModal}
             className="shrink-0 rounded-sm bg-gold px-6 py-3 text-sm font-medium text-ink hover:bg-gold/90 transition-colors"
           >
+<<<<<<< HEAD
             Open an account
+=======
+            Get Started / Open Account
+>>>>>>> 068ee71 (Initial commit of updated Profitdex project)
           </button>
         </div>
       </section>
